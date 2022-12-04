@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700,900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+
+  <!-- Style -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <title>Desafio 10 - Tabela de Alunos </title>
+</head>
+
+<body>
+
+
+  <div class="content">
+
+    <div class="container">
+      <div class="row align-items-stretch no-gutters contact-wrap">
+        <div class="col-md-8 col-sm-12">
+          <div class="form h-100">
+            <h3>CADASTRO DE MATRÍCULA:</h3>
+            <form class="mb-1" id="form_alunos" name="form_alunos">
+              <div class="row">
+
+                <div class="col-md-4 form-group mb-3">
+                  <label for="" class="col-form-label">RA *</label>
+                  <input type="text" class="form-control" name="ra" id="ra" placeholder="Seu número ra" maxlength="13"
+                    onkeypress="return apenas_numeros();">
+                  <span id="erro-ra" class="erro"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                  <label for="" class="col-form-label">Nome *</label>
+                  <input type="text" class="form-control" name="nome" id="nome" placeholder="Seu primeiro nome">
+                  <span id="erro-nome" class="erro"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                  <label for="" class="col-form-label">Sobrenome *</label>
+                  <input type="text" class="form-control" name="sobrenome" id="sobrenome" placeholder="Seu sobrenome">
+                  <span id="erro-sobrenome" class="erro"></span>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-4 form-group mb-3">
+                  <label for="" class="col-form-label">Idade *</label>
+                  <input type="text" class="form-control" name="idade" id="idade" placeholder="Sua idade" maxlength="2"
+                    onkeypress="return apenas_numeros();">
+                  <span id="erro-idade" class="erro"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                  <label for="" class="col-form-label">Sexo *</label>
+                  <select class="form-select form-control" aria-label=".form-select-sm example" name="sexo" id="sexo">
+                    <option selected disabled>Selecione seu gênero</option>
+                    <option value="F">Feminino</option>
+                    <option value="M">Masculino</option>
+                    <option value="X">Outro</option>
+                  </select>
+                  <span id="erro-sexo" class="erro"></span>
+                </div>
+
+                <div class="col-md-4 form-group mb-3">
+                  <label for="message" class="col-form-label">Data de matricula *</label>
+                  <input type="date" class="form-control" name="data" id="data" placeholder="Example: January 15th">
+                  <span id="erro-data" class="erro"></span>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-12 form-group mb-3">
+                  <label for="" class="col-form-label  icon-mortar-board
+                  "> Disciplinas</label>
+                  <br>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="disciplinas" id="disciplinas1"
+                      placeholder="Disciplinas" value=" Engenharia">
+                    <label class="form-check-label" for="disciplinas1">Engenharia</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="disciplinas" id="disciplinas2"
+                      placeholder="Disciplinas" value=" Programação para sites">
+                    <label class="form-check-label" for="disciplinas2">Programação para sites</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="disciplinas" id="disciplinas3"
+                      placeholder="Disciplinas" value=" Servidores">
+                    <label class="form-check-label" for="disciplinas3">Servidores</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="disciplinas" id="disciplinas4"
+                      placeholder="Disciplinas" value=" Acessibilidade">
+                    <label class="form-check-label" for="disciplinas4">Acessibilidade</label>
+                  </div>
+
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" name="disciplinas" id="disciplinas5"
+                      placeholder="Disciplinas" value=" Inglês">
+                    <label class="form-check-label" for="disciplinas5">Inglês</label>
+                  </div>
+
+                  <span id="erro-disc" class="erro"></span>
+                </div>
+
+              </div>
+
+              <div class="row">
+
+                <div class="col-md-12 form-group">
+
+                  <button type="button" class="btn btn-primary btn-sm icon-plus rounded-0 py-2 px-4 mt-3"
+                    onclick="Adicionar()"> Adicionar</button>
+
+                  <button type="button" class="btn btn-primary btn-sm icon-minus rounded-0 py-2 px-4 mt-3"
+                    onclick="Remover()"> Remover</button>
+
+                  <button type="button" class="btn btn-primary btn-sm   icon-eraser rounded-0 py-2 px-4 mt-3"
+                    onclick="Limpar()"> Limpar</button>
+
+                  <button type="button" class="btn btn-primary btn-sm icon-list-alt rounded-0 py-2 px-4 mt-3"
+                    onclick="Listar()"> Listar</button>
+
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="contact-info h-100">
+
+            <center><img src="img/logo.png" alt="" class="img-responsive text-center mb-1" width="150"></center>
+
+            <hr>
+
+            <p class="mb-5">Fatec Lins - Prof. Antonio Seabra - Faculdade de Tecnologia de Lins</p>
+            <ul class="list-unstyled">
+              <li class="d-flex">
+                <span class="wrap-icon icon-room mr-3"></span>
+                <span class="text">Estrada Mário Covas Junior - CEP: 16403-025 - Lins/SP</span>
+              </li>
+              <li class="d-flex">
+                <span class="wrap-icon icon-phone mr-3"></span>
+                <span class="text">(14) 3532.5182 | (14) 3523.7745 | (14) 3522.4863</span>
+              </li>
+              <li class="d-flex">
+                <span class="wrap-icon icon-envelope mr-3"></span>
+                <span class="text">faleconosco@fateclins.edu.br</span>
+              </li>
+            </ul>
+
+          </div>
+
+        </div>
+      </div>
+      <div class="row" id="limpa">
+        <div class="col-12">
+          <div id="tabela_alunos">
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</body>
+<script>
+
+  function apenas_numeros(evt) {
+    var theEvent = evt || window.event;
+    var key = theEvent.keyCode || theEvent.which;
+    key = String.fromCharCode(key);
+    //var regex = /^[0-9.,]+$/;
+    var regex = /^[0-9.]+$/;
+    if (!regex.test(key)) {
+      theEvent.returnValue = false;
+      if (theEvent.preventDefault) theEvent.preventDefault();
+    }
+  }
+
+</script>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+
+
+</html>
